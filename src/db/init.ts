@@ -1,10 +1,10 @@
-import User from "./models/User";
+// import User from "./models/User";
 
 
 const isDev = true
 
 async function init() {
-await User.sync({ alter: isDev });
+// await User.sync({ alter: isDev });
 
 }
 const dbInit = async() => {

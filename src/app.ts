@@ -4,16 +4,32 @@ import "dotenv/config"
 import dbInit from "./db/init"
 import routes from "./routes"
 import path from "path"
+const mongoose = require("mongoose");
+import config from "../src/db/config"
 
 const cors: any = require("cors"); 
 const http = require('http');
 
-dbInit();
+
+config()
+dbInit()
+
 
 const app: Application = express(); 
 const port = process.env.PORT || 3000; 
 app.use(cors()); // enable cors
+
+//above config not found below function work
 // Body parsing Middleware
+// const mongoDbUrl = "mongodb+srv://rambabucjit06:8ETjsTnV7SlHvKFn@cluster0.stpgtlo.mongodb.net/"
+
+// mongoose.connect(mongoDbUrl).then((db:any) =>{
+
+//     console.log('MONGO connected');
+
+// }).catch((error:any)=> console.log(error));
+// mongoose.set('strictQuery', false);
+
 app.use(express.json()); // josn middle ware
 
 

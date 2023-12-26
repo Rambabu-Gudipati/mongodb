@@ -9,6 +9,7 @@ import config from "../src/db/config"
 
 const cors: any = require("cors"); 
 const http = require('http');
+let mongoDbUri = process.env.uri
 
 
 config()
@@ -21,7 +22,7 @@ app.use(cors()); // enable cors
 
 //above config not found below function work
 // Body parsing Middleware
-// const mongoDbUrl = "mongodb+srv://rambabucjit06:8ETjsTnV7SlHvKFn@cluster0.stpgtlo.mongodb.net/"
+// const mongoDbUrl = mongoDbUri
 
 // mongoose.connect(mongoDbUrl).then((db:any) =>{
 
